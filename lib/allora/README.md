@@ -24,7 +24,7 @@ This blueprint is designed to assist in deploying a single Allora [Worker Node](
 ### Single Worker Node Setup
 ![Single Worker Node Deployment](./doc/assets/Architecture-Single-Allora-Worker-Node.png)
 
-## Worke Node System Requirements
+## Worker Node System Requirements
 
 - Operating System: Any modern Linux operating system
 - CPU: Minimum of 1/2 core
