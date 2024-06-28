@@ -84,22 +84,13 @@ We will use AWS Cloud9 to execute the subsequent commands. Follow the instructio
    > NOTE:
    > Example configuration parameters are set in the local `.env-sample` file. You can find more examples inside `sample-configs` directory.
 
-3. Deploy common components such as IAM role
-
-   ```bash
-   pwd
-   # Make sure you are in aws-blockchain-node-runners/lib/allora
-   npx cdk deploy allora-common
-   ```
-
    > IMPORTANT:
    > All AWS CDK v2 deployments use dedicated AWS resources to hold data during deployment. Therefore, your AWS account and Region must be [bootstrapped](https://docs.aws.amazon.com/cdk/v2/guide/bootstrapping.html) to create these resources before you can deploy. If you haven't already bootstrapped, issue the following command:
    > ```bash
    > cdk bootstrap aws://ACCOUNT-NUMBER/REGION
    > ```
 
-
-4. Deploy Allora Worker Node
+3. Deploy Allora Worker Node
 
    ```bash
    pwd
@@ -121,9 +112,6 @@ We will use AWS Cloud9 to execute the subsequent commands. Follow the instructio
 
    # Undeploy Single Node
    npx cdk destroy allora-single-node
-
-   # Delete all common components like IAM role and Security Group
-   npx cdk destroy allora-common
    ```
 
 2. Follow these steps to delete the Cloud9 instance in [Cloud9 Setup](../../docs/setup-cloud9.md)
