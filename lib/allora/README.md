@@ -105,4 +105,4 @@ We will use AWS Cloud9 to execute the subsequent commands. Follow the instructio
    npx cdk destroy allora-common
    ```
 
-2. Follow steps to delete the Cloud9 instance in [Cloud9 Setup](../../doc/setup-cloud9.md)
+2. Follow steps to delete the Cloud9 instance in [Cloud9 Setup](../../setup-cloud9.md#clearing-up-and-deleting-aws-cloud9)
