@@ -37,8 +37,12 @@ The Allora Worker Node is accessed by the user internally and is not exposed to 
 
 Multiple processes run on the Allora Worker Node (EC2 instance):
 
-  - Docker container with the
-  - Docker container running the model 
+  - Docker container with the worker node logic that handles communnication bet
+  - Docker container running the model server that reveal inferences to consumers
+
+Allora Public Head Nodes publish the Allora chain requests (requests for inferences from consumers) to Allora worker nodes. When a worker node is initialized, it starts with an environment variable called BOOT_NODES, which helps handle the connection and communications between worker nodes and the head nodes.
+
+The worker node (docker container) will call the function that invokes custom logic that handles. The request-response is a bidirectional flow from the Allora chain to the head nodes to the worker node and the model server that reveals inferences. 
 
 
 ## Worker Node System Requirements
