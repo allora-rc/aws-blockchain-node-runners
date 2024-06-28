@@ -2,7 +2,7 @@
 
 | Contributed by |
 |:--------------------:|
-| [@vladupshot](https://github.com/vladupshot), [@allora-rc](https://github.com/allora-rc) |
+| [@clementupshot](https://github.com/clementupshot), [@allora-rc](https://github.com/allora-rc) |
 
 [Allora](https://www.allora.network/) is a self-improving decentralized Artificial Intelligence (AI) network. The primary goal of the network is to be the marketplace for intelligence. In other words, Allora aims to incentivize data scientists (workers) to provide high-quality inferences as requested by consumers. Inferences include predictions of arbitrary future events or difficult computations requiring specialized knowledge.
 
