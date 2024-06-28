@@ -88,7 +88,7 @@ We will use AWS Cloud9 to execute the subsequent commands. Follow the instructio
 
 ## Clear up and undeploy everything
 
-1. Undeploy all Nodes and Common stacks
+1. Undeploy worker node and common components
 
    ```bash
    # Setting the AWS account id and region in case local .env file is lost
