@@ -105,4 +105,15 @@ We will use AWS Cloud9 to execute the subsequent commands. Follow the instructio
    npx cdk destroy allora-common
    ```
 
-2. Follow these steps to delete the Cloud9 instance in [Cloud9 Setup](../../docs/setup-cloud9.md#clearing-up-and-deleting-aws-cloud9)
+2. Follow these steps to delete the Cloud9 instance in [Cloud9 Setup](../../docs/setup-cloud9.md)
+
+Delete Cloud9 instance
+
+Navigate to the AWS Cloud9 service in your Management Console, then select the environment you have created. On the top right, click **Delete** button and follow the instructions.
+
+2. Delete the instance profile and IAM role
+
+```bash
+aws iam delete-instance-profile --instance-profile-name Cloud9-Developer-Access
+aws iam delete-role --role-name Cloud9-Developer-Access
+```
