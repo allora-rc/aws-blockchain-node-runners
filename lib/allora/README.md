@@ -45,7 +45,7 @@ We will use AWS Cloud9 to execute the subsequent commands. Follow the instructio
    npm install
 ```
 
-### Deploy Single Worker Node
+### Deploy single worker node
 
 1. Make sure you are in the root directory of the cloned repository
 
