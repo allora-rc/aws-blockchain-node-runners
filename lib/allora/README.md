@@ -36,7 +36,7 @@ This blueprint creates a setup where the Allora worker node is supported by a si
 - Operating System: Any modern Linux operating system
 - CPU: Minimum of 1/2 core
 - Memory: 2 to 4 GB
-- Storage: SSD or NVMe with at least 5GB of space.
+- Storage: SSD or NVMe with at least 5GB of space
 
 ## Additional materials
 
