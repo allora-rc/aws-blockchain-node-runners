@@ -109,7 +109,7 @@ We will use AWS Cloud9 to execute the subsequent commands. Follow the instructio
    ```bash
    pwd
    # Make sure you are in aws-blockchain-node-runners/lib/allora
-   npx cdk deploy starknet-common
+   npx cdk deploy allora-common
    ```
 
    > IMPORTANT:
