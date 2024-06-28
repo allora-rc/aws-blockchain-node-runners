@@ -72,3 +72,57 @@ This is the Well-Architected checklist for Allora Worker Nodes implementation of
 | 1/ Fullnode                                       | 8 vCPU, 32 GB RAM, Data volume: EBS gp3 2TB, 7K IOPS, 400 MB/s throughput | `m6a.2xlarge` EBS gp3 volumes about 2000 GB(7000 IOPS, 400 MBps/s throughput) | [.env-sample-full](./sample-configs/.env-sample-full) |
 </details>
 
+## Setup Instructions
+
+### Setup Cloud9
+
+We will use AWS Cloud9 to execute the subsequent commands. Follow the instructions in [Cloud9 Setup](../../docs/setup-cloud9.md).
+
+### Clone this repository and install dependencies
+
+```bash
+   git clone https://github.com/aws-samples/aws-blockchain-node-runners.git
+   cd aws-blockchain-node-runners
+   npm install
+```
+
+### Deploy Single Worker Node
+
+1. Make sure you are in the root directory of the cloned repository
+
+2. Configure your setup
+
+    Create your own copy of `.env` file and edit it to update with your AWS Account ID and Region:
+    ```bash
+   # Make sure you are in aws-blockchain-node-runners/lib/allora
+   cd lib/allora
+   npm install
+   pwd
+   cp ./sample-configs/.env-sample-full .env
+   nano .env
+    ```
+   > NOTE:
+   > Example configuration parameters are set in the local `.env-sample` file. You can find more examples inside `sample-configs` directory.
+
+3. Deploy common components such as IAM role
+
+   ```bash
+   pwd
+   # Make sure you are in aws-blockchain-node-runners/lib/allora
+   npx cdk deploy starknet-common
+   ```
+
+   > IMPORTANT:
+   > All AWS CDK v2 deployments use dedicated AWS resources to hold data during deployment. Therefore, your AWS account and Region must be [bootstrapped](https://docs.aws.amazon.com/cdk/v2/guide/bootstrapping.html) to create these resources before you can deploy. If you haven't already bootstrapped, issue the following command:
+   > ```bash
+   > cdk bootstrap aws://ACCOUNT-NUMBER/REGION
+   > ```
+
+
+4. Deploy Allora Worker Node
+
+   ```bash
+   pwd
+   # Make sure you are in aws-blockchain-node-runners/lib/allora
+   npx cdk deploy allora-single-node --json --outputs-file single-node-deploy.json
+   ```
