@@ -24,13 +24,6 @@ This blueprint is designed to assist in deploying a single Allora [Worker Node](
 ### Single Worker Node Setup
 ![Single Worker Node Deployment](./doc/assets/Architecture-Single-Allora-Worker-Node.png)
 
-1. The Allora worker node is deployed in the Default VPC. An  Internet Gateway.
-2. The Woeker is used by dApps or development tools internally from within the Default VPC. JSON RPC API is not exposed to the Internet directly to protect nodes from unauthorized access.
-3. The Allora Worker Node uses all required secrets locally. Optionally, AWS Secrets Manager as secure backup.
-The Stacks node sends various monitoring metrics for both EC2 and Stacks nodes to Amazon CloudWatch.
-
-This blueprint creates a setup where the Allora worker node is supported by a side node providing inferences. They communicate through an endpoint so the worker will request inferences to the side node (the Inference Server). This makes an ultra-light worker node.
-
 ## Worke Node System Requirements
 
 - Operating System: Any modern Linux operating system
