@@ -85,3 +85,24 @@ We will use AWS Cloud9 to execute the subsequent commands. Follow the instructio
    # Make sure you are in aws-blockchain-node-runners/lib/allora
    npx cdk deploy allora-single-node --json --outputs-file single-node-deploy.json
    ```
+
+## Clear up and undeploy everything
+
+1. Undeploy all Nodes and Common stacks
+
+   ```bash
+   # Setting the AWS account id and region in case local .env file is lost
+   export AWS_ACCOUNT_ID=<your_target_AWS_account_id>
+   export AWS_REGION=<your_target_AWS_region>
+
+   pwd
+   # Make sure you are in aws-blockchain-node-runners/lib/allora
+
+   # Undeploy Single Node
+   npx cdk destroy allora-single-node
+
+   # Delete all common components like IAM role and Security Group
+   npx cdk destroy allora-common
+   ```
+
+2. Follow steps to delete the Cloud9 instance in [Cloud9 Setup](../../doc/setup-cloud9.md)
