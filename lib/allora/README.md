@@ -24,13 +24,17 @@ This blueprint is designed to assist in deploying a single Allora [Worker Node](
 ### Single Worker Node Setup
 ![Single Worker Node Deployment](./doc/assets/Architecture-Single-Allora-Worker-Node.png)
 
-1. The AWS Cloud Development Kit (CDK) is used to deploy a single Allora Worker Node. The CDK application deploys the following infrastructure
+The AWS Cloud Development Kit (CDK) is used to deploy a single Allora Worker Node. The CDK application deploys the following infrastructure
    
-   - Virtual Private Cloud (VPC)
-   - Internet Gateway (IGW) to allow inbound requests for inferences from consumers and outbound responses from the worker node revealing these inferences  
+  - Virtual Private Cloud (VPC)
+  - Internet Gateway (IGW) to allow inbound requests for inferences from consumers and outbound responses from the worker node revealing these inferences
+  - Public subnet that has a direct route to the IGW
+  - Security Group (SG) with TCP Port 9010 open inbound allowing request for inferences to be routed to the Allora Worker Node
+  - Single EC2 instance (the Allora Worker Node) assigned to the public subnet
+  - Elastic IP Address (EIP) associated with the EC2 instance
 
 The Allora Worker Node is accessed by the user internally and is not exposed to the Internet to protect the node from unauthorized access. A user can gain access to the EC2 Instance using AWS Session Manager. 
-The AWS Cloud Development Kit (CDK) is used to deploy a single node. 
+
 
 ## Worker Node System Requirements
 
