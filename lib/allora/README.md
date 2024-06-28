@@ -24,6 +24,11 @@ This blueprint is designed to assist in deploying a single Allora [Worker Node](
 ### Single Worker Node Setup
 ![Single Worker Node Deployment](./doc/assets/Architecture-Single-Allora-Worker-Node.png)
 
+1.  A single Allora Woker Node is deployed in a VPC. The VPC includes an Internet Gateway 
+2.  
+3.  The e Theta node is accessed by the user internally. JSON RPC API is not exposed to the Internet to protect the node from unauthorized access. User can get console acess to EC2 Instance using Session Manager
+The AWS Cloud Development Kit (CDK) is used to deploy a single node. 
+
 ## Worker Node System Requirements
 
 - Operating System: Any modern Linux operating system
