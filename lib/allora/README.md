@@ -50,7 +50,7 @@ The worker node (docker container) will call the function that invokes custom lo
 - Operating System: Any modern Linux operating system
 - CPU: Minimum of 1/2 core
 - Memory: 2 to 4 GB
-- Storage: SSD or NVMe with at least 5GB of space
+- Storage: SSD or NVMe with at least 20GB of space
 
 ## Setup Instructions
 
