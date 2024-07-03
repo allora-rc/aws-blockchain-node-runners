@@ -1,53 +1,15 @@
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    
-
-
-
     <meta name="slack-app-id" content="A0G8S1LSC">
-
-
-
-    
-
-
-
-
-
-
-
-
-
 <link rel="icon" href="https://cdn-cashy-static-assets.lucidchart.com/app/webroot/favicons/favicon_chart_v5.ico" />
-
-
-
-
 <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=2.0, user-scalable=no" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-
-
-
 <link rel="apple-touch-icon-precomposed" href="https://cdn-cashy-static-assets.lucidchart.com/app/webroot/favicons/apple_touch_icon_chart_v5.png" />
-
-
-    
-        
-            
-                
-                    <title>AWS Node Runners: Lucidchart</title>
-                
-            
-
-            <!-- For facebook: -->
+	<title>AWS Node Runners: Lucidchart</title>
+                 <!-- For facebook: -->
             
                 <meta name="title" content="AWS Node Runners: Lucidchart" />
             
@@ -59,21 +21,9 @@
                 <link rel="image_src" href="//lucid.app/documents/thumb/cdd6c679-ecb9-4e54-865e-0cfb3e8b0196/0/6577545/NULL/110" />
             
         
-    
-
-    
-        
-
-
-
-
 <!-- OEmbed Links-->
 <link rel ="alternate" type="application/json+oembed" href="https://lucid.app/oembed?url=https%3A%2F%2Flucid.app%2F%2Flucidchart%2Fcdd6c679-ecb9-4e54-865e-0cfb3e8b0196%2Fview%3Fpage%3Dm-5o7ONTd-nK%26invitationId%3Dinv_9f941b36-c155-4af1-b194-f4e9bf77bff4&amp;format=json" title="AWS Node Runners: Lucidchart OEmbed Profile" />
 <link rel ="alternate" type="text/xml+oembed" href="https://lucid.app/oembed?url=https%3A%2F%2Flucid.app%2F%2Flucidchart%2Fcdd6c679-ecb9-4e54-865e-0cfb3e8b0196%2Fview%3Fpage%3Dm-5o7ONTd-nK%26invitationId%3Dinv_9f941b36-c155-4af1-b194-f4e9bf77bff4&amp;format=xml" title="AWS Node Runners: Lucidchart OEmbed Profile" />
-
-
-
-
 
 <!-- Twitter cards tags-->
 
@@ -85,10 +35,6 @@
 <meta name="twitter:image" content="https://lucid.app/documents/thumb/cdd6c679-ecb9-4e54-865e-0cfb3e8b0196/0/6577545/NULL/1024" />
 <meta name="twitter:image:alt" content="AWS Node Runners : Lucidchart" />
 
-
-
-
-
 <!-- Facebook opengraph tags-->
 
 <meta property="og:url" content="https://lucid.app/lucidchart/cdd6c679-ecb9-4e54-865e-0cfb3e8b0196/edit" />
@@ -97,13 +43,6 @@
 <meta property="og:description" content="Check out my Lucidchart document! Lucidchart is the intelligent diagramming solution that empowers teams to clarify complexity, align their insights, and build the future faster. Create your own diagram or flowchart at lucidchart.com." />
 <meta property="og:image" content="https://lucid.app/documents/thumb/cdd6c679-ecb9-4e54-865e-0cfb3e8b0196/0/6577545/NULL/1024" />
 <meta property="og:image:alt" content="AWS Node Runners: Lucidchart" />
-
-
-
-
-    
-
-    
 
 <script type="text/javascript">
 
@@ -132,9 +71,6 @@ window.markAssetFailed = function(error) {
     window.bootstrapJsErrorLogger.markAssetFailed(error);
 }
 </script>
-
-
-    
 
 <script>
     function getActiveBrainstormRequest(documentId, invitationId) {
@@ -325,14 +261,6 @@ function simpleXhr(method, url, totalAttempts, xhrModifier, successFn, failureFn
 </script>
 
 
-    
-
-
-
-
-
-
-
     <script>
         window.frontendAssetVersion = "4/f/e38c71795c13f8a4b359fe738c158932e102ca0c7b719c0432dab59a99e847";
         window.assetBucketPrefixes = `{"CasCompiled":"cas/","CasUncompiled":"cas_private/","Compiled":"assets/","Uncompiled":"private_assets/"}`;
@@ -380,15 +308,6 @@ function simpleXhr(method, url, totalAttempts, xhrModifier, successFn, failureFn
     
 </head>
 <body>
-
-
-    
-
-
-
-
-
-
 
 
 <!DOCTYPE html>
@@ -469,23 +388,11 @@ setTimeout(function(){
 }, 10)
 </script>
 
-
-
-
-
 <script>
     if (window.performance && window.performance.mark) {
         window.performance.mark('jsBundles');
     }
 </script>
-
-
-
-
-
-
-
-
 
     <script>
         window.frontendAssetVersion = "4/f/e38c71795c13f8a4b359fe738c158932e102ca0c7b719c0432dab59a99e847";
@@ -497,42 +404,21 @@ setTimeout(function(){
             editorAppScriptsPromise.reject = reject;
         });
     </script>
-
-    
-        
         
 <script onerror="markAssetFailed(event)" src="https://static-assets.lucidchart.com/cas/5/8/a0276f54d25f094581fa2b245291d789e987f2aef9c796456920358f8fe3a3.js.br"></script>
         
-    
-        
-        
 <script onerror="markAssetFailed(event)" src="https://static-assets.lucidchart.com/cas/e/8/dbf189bcd14f184d0b5840fbb78ef2c83065961d2a7b53ae555ca12ccef9c6.js.br"></script>
-        
-    
-        
-        
+               
 <script onerror="markAssetFailed(event)" src="https://static-assets.lucidchart.com/cas/4/9/ba1d79de5e74bdb5e7a8b59833b6fee814c1a4bbb0e1c73a7cedb6d58ab909.js.br"></script>
-        
-    
         
         <link rel="stylesheet" class="global-css js-app-link" href="https://static-assets.lucidchart.com/cas/4/0/38f216de44d7ab249817cf59cc21bf6bc9c9b3562800c28e586ca29980e4d5.css.br" />
         
-    
-        
         <link rel="stylesheet" class="global-css js-app-link" href="https://static-assets.lucidchart.com/cas/9/3/04c7fbb425422ae4ac0c9fbc61fd9d87c39ef32ebc56cc600130e35632c251.css.br" />
-        
-    
-        
-        
+               
 <script onerror="markAssetFailed(event)" src="https://static-assets.lucidchart.com/cas/b/1/4cc8e07f532031c276120d929a8f16e5f62ee24da92720feeb686a917332f8.js.br"></script>
-        
-    
-        
-        
+                
 <script onerror="markAssetFailed(event)" src="https://static-assets.lucidchart.com/cas/d/b/18fef56bd17f33bc81e6c7a1b8d63a6866159e4d4b164524f14d3ebd44a25e.js.br"></script>
         
-    
-    
         <link rel="preload" as="script"  href="https://static-assets.lucidchart.com/cas/5/4/60b311295027afc8bc2bd40354817c38b6403e5dc2ab6cc31bf758e3a9efa4.js.br">
     
 
@@ -672,16 +558,6 @@ editorAppScriptsPromise.promise.then(() => {
 });
 </script>
 
-
-
-
-
-
-    
-
-
-
-
 <script>
     Promise.resolve(editorAppScriptsPromise.promise).then(() => {
         
@@ -711,10 +587,6 @@ editorAppScriptsPromise.promise.then(() => {
         
     })
 </script>
-
-    
-
-
 
 <script type="text/javascript">
     function makeRequest(url, name) {
