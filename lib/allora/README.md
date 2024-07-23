@@ -31,26 +31,25 @@ The AWS Cloud Development Kit (CDK) is used to deploy a single Allora Worker Nod
   - Public subnet that has a direct route to the IGW
   - Security Group (SG) with TCP Port 9010 open inbound allowing requests for inferences to be routed to the Allora Worker Node
   - Single Amazon Elastic Compute Cloud (EC2) instance (the Allora Worker Node) assigned to the public subnet
-  - Elastic IP Address (EIP) associated with the EC2 instance to maintain consistent IP addressing across instance restarts
 
 The Allora Worker Node is accessed by the user internally and is not exposed to the Internet to protect the node from unauthorized access. A user can gain access to the EC2 Instance using AWS Session Manager. 
 
 Multiple processes run on the Allora Worker Node (EC2 instance):
 
-  - Docker container with the worker node logic that handles communnication bet
-  - Docker container running the model server that reveal inferences to consumers
+  - Docker container with the worker node logic that handles communication between the worker and the public head nodes
+  - Docker container running the model server that reveals inferences to consumers
 
 Allora Public Head Nodes publish the Allora chain requests (requests for inferences from consumers) to Allora worker nodes. When a worker node is initialized, it starts with an environment variable called BOOT_NODES, which helps handle the connection and communications between worker nodes and the head nodes.
 
-The worker node (docker container) will call the function that invokes custom logic that handles. The request-response is a bidirectional flow from the Allora chain (inference requests from consumers) to the public head nodes to the worker node and finally to the model server that reveals inferences. 
+The worker node (docker container) will call the function that invokes custom logic that handles the actual inference. The request-response is a bidirectional flow from the Allora chain (inference requests from consumers) to the public head nodes to the worker node and finally to the model server that reveals inferences. 
 
 
 ## Worker Node System Requirements
 
 - Operating System: Any modern Linux operating system
-- CPU: Minimum of 1/2 core
-- Memory: 2 to 4 GB
-- Storage: SSD or NVMe with at least 20GB of space
+- CPU: Minimum of 2 cores
+- Memory: Minimum of 4GB
+- Storage: SSD or NVMe with minimum of 20GB of space
 
 ## Setup Instructions
 
