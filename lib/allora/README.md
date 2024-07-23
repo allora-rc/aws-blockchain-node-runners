@@ -74,8 +74,6 @@ This is the Well-Architected checklist for the Allora worker nodes implementatio
 | Sustainability          | Hardware & services               | Select most efficient hardware for your workload                                 | The solution uses Graviton-powered instances. There is a potential to use AWS Graviton-based Amazon EC2 instances which offer the best performance per watt of energy use in Amazon EC2. |
 </details>
 
-<details>
-
 ## Worker Node System Requirements
 
 - Operating System: Any modern Linux operating system
