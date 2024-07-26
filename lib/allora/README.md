@@ -165,29 +165,39 @@ echo "INSTANCE_ID=" $INSTANCE_ID
 aws ssm start-session --target $INSTANCE_ID --region $AWS_REGION
 sudo cat /var/log/cloud-init-output.log
 ```
-2. How to check the worker node connectivity to the Allora AppChain?
+2. How to check the worker node connectivity to the Allora Network?
 
-   **Note:** In this tutorial we chose not to use SSH and use Session Manager instead. That allows you to log all sessions in AWS CloudTrail to see who logged into the server and when. If you receive an error similar to `SessionManagerPlugin is not found`, [install Session Manager plugin for AWS CLI](https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-install-plugin.html)
+Please enter the [AWS Management Console - EC2 Instances](https://us-east-2.console.aws.amazon.com/ec2/home?region=us-east-2#Instances:instanceState=running), choose the correct region, copy the instance ID you need to query.
 
 ```bash
-   pwd
-   # Make sure you are in aws-blockchain-node-runners/lib/allora
+pwd
+# Make sure you are in aws-blockchain-node-runners/lib/allora
 
-   export INSTANCE_ID=$(cat single-node-deploy.json | jq -r '..|.single-node-instance-id? | select(. != null)')
-   echo "INSTANCE_ID=" $INSTANCE_ID
-   aws ssm start-session --target $INSTANCE_ID --region $AWS_REGION
-   sudo cat /var/log/cloud-init-output.log
+export INSTANCE_ID="i-**************"
+echo "INSTANCE_ID=" $INSTANCE_ID
+aws ssm start-session --target $INSTANCE_ID --region $AWS_REGION
+allorad q emissions topic 1 --node https://allora-rpc.testnet-1.testnet.allora.network
 ```
 
-   **Note:** In this tutorial we chose not to use SSH and use Session Manager instead. That allows you to log all sessions in AWS CloudTrail to see who logged into the server and when. If you receive an error similar to `SessionManagerPlugin is not found`, [install Session Manager plugin for AWS CLI](https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-install-plugin.html)
-
+You should be able to query Topic 1 on the Allora Network and see similar output below
 ```bash
-   pwd
-   # Make sure you are in aws-blockchain-node-runners/lib/allora
-
-   export INSTANCE_ID=$(cat single-node-deploy.json | jq -r '..|.single-node-instance-id? | select(. != null)')
-   echo "INSTANCE_ID=" $INSTANCE_ID
-   aws ssm start-session --target $INSTANCE_ID --region $AWS_REGION
-   sudo cat /var/log/cloud-init-output.log
+effective_revenue: "0"
+topic:
+  allow_negative: true
+  alpha_regret: "0.1"
+  creator: allo1lzf3xp0zqg4239mrswd0cclsgt3y8fl7l84hxu
+  default_arg: ETH
+  epoch_last_ended: "183177"
+  epoch_length: "120"
+  ground_truth_lag: "120"
+  id: "1"
+  inference_logic: bafybeifqs2c7ghellof657rygvrh6ht73scto3oznw4i747sqk3ihy7s5m
+  inference_method: allora-inference-function.wasm
+  loss_logic: bafybeid7mmrv5qr4w5un6c64a6kt2y4vce2vylsmfvnjt7z2wodngknway
+  loss_method: loss-calculation-eth.wasm
+  metadata: ETH 10min Prediction
+  p_norm: "3"
+  tolerance: "0.001"
+weight: "0"
 ```
 
