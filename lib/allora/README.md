@@ -152,32 +152,42 @@ aws iam delete-role --role-name Cloud9-Developer-Access
 ```
 ### FAQ
 
-1. How to check the logs of the clients running on my edge node?
-
-Please enter the [AWS Management Console - EC2 Instances](https://us-east-2.console.aws.amazon.com/ec2/home?region=us-east-2#Instances:instanceState=running), choose the correct region, copy the instance ID you need to query.
-
-   **Note:** In this tutorial we chose not to use SSH and use Session Manager instead. That allows you to log all sessions in AWS CloudTrail to see who logged into the server and when. If you receive an error similar to `SessionManagerPlugin is not found`, [install Session Manager plugin for AWS CLI](https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-install-plugin.html)
-
-```bash
-pwd
-# Make sure you are in aws-blockchain-node-runners/lib/theta
-
-export INSTANCE_ID="i-**************"
-echo "INSTANCE_ID=" $INSTANCE_ID
-aws ssm start-session --target $INSTANCE_ID --region $AWS_REGION
-sudo docker logs $(sudo docker ps -q)
-
-```
-2. How to check the logs from the EC2 user-data script?
+1. How to check the logs from the EC2 user-data script?
 
 Please enter the [AWS Management Console - EC2 Instances](https://us-east-2.console.aws.amazon.com/ec2/home?region=us-east-2#Instances:instanceState=running), choose the correct region, copy the instance ID you need to query.
 
 ```bash
 pwd
-# Make sure you are in aws-blockchain-node-runners/lib/theta
+# Make sure you are in aws-blockchain-node-runners/lib/allora
 
 export INSTANCE_ID="i-**************"
 echo "INSTANCE_ID=" $INSTANCE_ID
 aws ssm start-session --target $INSTANCE_ID --region $AWS_REGION
 sudo cat /var/log/cloud-init-output.log
 ```
+2. How to check the worker node connectivity to the Allora AppChain?
+
+   **Note:** In this tutorial we chose not to use SSH and use Session Manager instead. That allows you to log all sessions in AWS CloudTrail to see who logged into the server and when. If you receive an error similar to `SessionManagerPlugin is not found`, [install Session Manager plugin for AWS CLI](https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-install-plugin.html)
+
+```bash
+   pwd
+   # Make sure you are in aws-blockchain-node-runners/lib/allora
+
+   export INSTANCE_ID=$(cat single-node-deploy.json | jq -r '..|.single-node-instance-id? | select(. != null)')
+   echo "INSTANCE_ID=" $INSTANCE_ID
+   aws ssm start-session --target $INSTANCE_ID --region $AWS_REGION
+   sudo cat /var/log/cloud-init-output.log
+```
+
+   **Note:** In this tutorial we chose not to use SSH and use Session Manager instead. That allows you to log all sessions in AWS CloudTrail to see who logged into the server and when. If you receive an error similar to `SessionManagerPlugin is not found`, [install Session Manager plugin for AWS CLI](https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-install-plugin.html)
+
+```bash
+   pwd
+   # Make sure you are in aws-blockchain-node-runners/lib/allora
+
+   export INSTANCE_ID=$(cat single-node-deploy.json | jq -r '..|.single-node-instance-id? | select(. != null)')
+   echo "INSTANCE_ID=" $INSTANCE_ID
+   aws ssm start-session --target $INSTANCE_ID --region $AWS_REGION
+   sudo cat /var/log/cloud-init-output.log
+```
+
