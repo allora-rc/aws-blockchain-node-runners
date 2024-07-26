@@ -176,11 +176,11 @@ pwd
 export INSTANCE_ID="i-**************"
 echo "INSTANCE_ID=" $INSTANCE_ID
 aws ssm start-session --target $INSTANCE_ID --region $AWS_REGION
-allorad q emissions topic 1 --node https://allora-rpc.testnet-1.testnet.allora.network
 ```
 
 You should be able to query Topic 1 on the Allora Network and see similar output below
 ```bash
+$ allorad q emissions topic 1 --node https://allora-rpc.testnet-1.testnet.allora.network
 effective_revenue: "0"
 topic:
   allow_negative: true
