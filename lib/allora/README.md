@@ -200,4 +200,22 @@ topic:
   tolerance: "0.001"
 weight: "0"
 ```
+3. How to check the Allora worker containers are running?
 
+Please enter the [AWS Management Console - EC2 Instances](https://us-east-2.console.aws.amazon.com/ec2/home?region=us-east-2#Instances:instanceState=running), choose the correct region, copy the instance ID you need to query.
+
+```bash
+pwd
+# Make sure you are in aws-blockchain-node-runners/lib/allora
+
+export INSTANCE_ID="i-**************"
+echo "INSTANCE_ID=" $INSTANCE_ID
+aws ssm start-session --target $INSTANCE_ID --region $AWS_REGION
+```
+
+```bash
+[ec2-user@ip-192-168-0-224 ~]$ docker ps -a
+CONTAINER ID   IMAGE                                             COMMAND                  CREATED        STATUS                    PORTS     NAMES
+b10c12c51f32   worker-worker                                     "allora-node allora-…"   18 hours ago   Exited (2) 18 hours ago             worker
+05273577ce7a   alloranetwork/allora-inference-base-head:latest   "allora-node allora-…"   18 hours ago   Exited (2) 18 hours ago             head
+```
