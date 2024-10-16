@@ -33,7 +33,7 @@ The AWS Cloud Development Kit (CDK) is used to deploy a single Allora Worker Nod
   - Single Amazon Elastic Compute Cloud (EC2) instance (the Allora Worker Node) assigned to the public subnet
   - Single Amazon Simple Storage Service (S3) bucket to store the EC2 instance user data script
 
-After the Allora Worker Node is initialized, the EC2 instance's user data script will automatically bootstrap an inference server (Docker container) on the worker node. The user data script clones an Allora Labs public [github repo]([https://docs.allora.network/nops](https://github.com/allora-network/basic-coin-prediction-node)) that contains a basic coin price prediction model.
+After the Allora Worker Node is initialized, the EC2 instance's user data script will automatically bootstrap an inference server (Docker container) on the worker node. The user data script clones an Allora Labs public [github repo](https://github.com/allora-network/basic-coin-prediction-node)) that contains a basic coin price prediction model.
 
 The Allora Worker Node is accessed by the user internally and is not exposed to the Internet to protect the node from unauthorized access. A user can gain access to the EC2 Instance using AWS Session Manager. 
 
