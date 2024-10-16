@@ -2,7 +2,7 @@
 
 | Contributed by |
 |:--------------------:|
-| [@clementupshot](https://github.com/clementupshot), [@allora-rc](https://github.com/allora-rc), [@Madisonw](https://github.com/Madisonw)|
+|[@allora-rc](https://github.com/allora-rc), [@Madisonw](https://github.com/Madisonw)|
 
 [Allora](https://www.allora.network/) is a self-improving decentralized Artificial Intelligence (AI) network. The primary goal of the network is to be the marketplace for intelligence. In other words, Allora aims to incentivize data scientists (workers) to provide high-quality inferences as requested by consumers. Inferences include predictions of arbitrary future events or difficult computations requiring specialized knowledge.
 
@@ -31,17 +31,13 @@ The AWS Cloud Development Kit (CDK) is used to deploy a single Allora Worker Nod
   - Public subnet that has a direct route to the IGW
   - Security Group (SG) with TCP Port 9010 open inbound allowing requests for inferences to be routed to the Allora Worker Node
   - Single Amazon Elastic Compute Cloud (EC2) instance (the Allora Worker Node) assigned to the public subnet
+  - Single Amazon Simple Storage Service (S3) bucket to store the EC2 instance user data script
+
+After the Allora Worker Node is initialized, the EC2 instance's user data script will automatically bootstrap an inference server (Docker container) on the worker node. The user data script clones an Allora Labs public [github repo]([https://docs.allora.network/nops](https://github.com/allora-network/basic-coin-prediction-node)) that contains a basic coin price prediction model.
 
 The Allora Worker Node is accessed by the user internally and is not exposed to the Internet to protect the node from unauthorized access. A user can gain access to the EC2 Instance using AWS Session Manager. 
 
-Multiple processes run on the Allora Worker Node (EC2 instance):
-
-  - Docker container with the worker node logic that handles communication between the worker and the public head nodes
-  - Docker container running the model server that reveals inferences to consumers
-
-Allora Public Head Nodes publish the Allora chain requests (requests for inferences from consumers) to Allora worker nodes. When a worker node is initialized, it starts with an environment variable called BOOT_NODES, which helps handle the connection and communications between worker nodes and the head nodes.
-
-The worker node (docker container) will call the function that invokes custom logic that handles the actual inference. The request-response is a bidirectional flow from the Allora chain (inference requests from consumers) to the public head nodes to the worker node and finally to the model server that reveals inferences. 
+The worker node is supported by an inference server. Communication occurs through an endpoint, allowing the worker to request inferences from the model server. The worker node will call the function that invokes custom logic that handles the actual inference. The request-response is a bidirectional flow from the Allora chain (inference requests from consumers) to the worker node and finally to the model server endpoint that reveals inferences. 
 
 ## Additional materials
 
