@@ -35,9 +35,10 @@ The AWS Cloud Development Kit (CDK) is used to deploy a single Allora Worker Nod
 
 After the Allora Worker Node is initialized, the EC2 instance's user data script will automatically bootstrap an inference server (Docker container) on the worker node. The user data script clones an Allora Labs public [git repo](https://github.com/allora-network/basic-coin-prediction-node) that contains a basic coin price prediction model.
 
+The worker node communicates through an endpoint, allowing the worker to request inferences from the model server. The worker node will call the function that invokes custom logic that handles the actual inference. The request-response is a bidirectional flow from the Allora chain (inference requests from consumers) to the worker node and finally to the model server endpoint that reveals inferences. 
+
 The Allora Worker Node is accessed by the user internally and is not exposed to the Internet to protect the node from unauthorized access. A user can gain access to the EC2 Instance using AWS Session Manager. 
 
-The worker node is supported by an inference server. Communication occurs through an endpoint, allowing the worker to request inferences from the model server. The worker node will call the function that invokes custom logic that handles the actual inference. The request-response is a bidirectional flow from the Allora chain (inference requests from consumers) to the worker node and finally to the model server endpoint that reveals inferences. 
 
 ## Additional materials
 
